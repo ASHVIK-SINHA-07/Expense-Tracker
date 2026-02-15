@@ -1,6 +1,6 @@
 # 💸 Expense Tracker — Auto-categorize & Visualize Spending
 
-> **Portfolio Piece #2** — Demonstrates data processing, keyword-based classification, rich terminal UI, and chart generation with Python.
+> **Portfolio Piece #2** — Demonstrates data processing, keyword-based classification, rich terminal UI, and professional data visualization with Python.
 
 ---
 
@@ -12,8 +12,11 @@
 | **Interactive Menu** | 6-option menu loop — load, view, chart, export, customize, exit |
 | **Auto-categorize** | Classifies uncategorized expenses into 8 categories using keyword matching |
 | **Summary report** | Styled panels with total spent, per-category breakdown (with inline bars), and top 5 expenses |
-| **Bar chart** | Horizontal bar chart of spending by category |
-| **Pie chart** | Percentage breakdown of expenses |
+| **Professional Dashboard** | 2×2 grid combining bar, pie, trend, and heatmap charts — saved at 300 dpi |
+| **Bar chart** | Horizontal bars sorted by amount with average-spending line |
+| **Pie chart** | Exploded largest slice, showing both percentages and amounts |
+| **Time-trend chart** | Daily spending line with 3-day moving average and highlighted high-spend days |
+| **Heatmap** | Category × Day spending intensity (seaborn) |
 | **CSV export** | Saves cleaned, categorized data to a new CSV |
 | **Custom rules** | Add your own keyword → category mappings at runtime |
 
@@ -59,7 +62,7 @@ python main.py path/to/your_expenses.csv
 
 - **Option 1** — Prompts for a CSV file, loads it with a progress bar, auto-categorizes, and shows the summary.
 - **Option 2** — Re-displays the summary with styled tables anytime.
-- **Option 3** — Renders bar + pie charts with a spinner animation and saves PNGs.
+- **Option 3** — Renders all 4 chart types + a combined dashboard and saves PNGs.
 - **Option 4** — Exports the categorized DataFrame to `output/categorized_expenses.csv`.
 - **Option 5** — Add custom keyword → category rules (persists for the session).
 - **Option 6** — Exit.
@@ -70,14 +73,17 @@ python main.py path/to/your_expenses.csv
 
 ```
 expense-tracker/
-├── main.py                  # Main script (Rich UI + menu loop)
+├── main.py                  # Main script (Rich UI + charts + menu loop)
 ├── sample_expenses.csv      # 20-row sample dataset
-├── requirements.txt         # pandas, matplotlib, rich
+├── requirements.txt         # pandas, matplotlib, seaborn, numpy, rich
+├── .gitignore
+├── LICENSE
 ├── README_EXPENSE_TRACKER.md
 └── output/                  # Generated after first run
     ├── categorized_expenses.csv
-    ├── category_chart.png
-    └── pie_chart.png
+    ├── category_chart.png   # Individual bar chart
+    ├── pie_chart.png        # Individual pie chart
+    └── dashboard.png        # 2×2 combined dashboard (300 dpi)
 ```
 
 ---
@@ -156,13 +162,27 @@ Date,Description,Amount,Category
 |---|---|
 | ![Bar Chart](output/category_chart.png) | ![Pie Chart](output/pie_chart.png) |
 
+### Dashboard (2×2 — all charts in one image)
+
+![Expense Dashboard](output/dashboard.png)
+
+The dashboard includes:
+- **Top-left:** Horizontal bar chart with average-spending line
+- **Top-right:** Pie chart with exploded largest slice and amount labels
+- **Bottom-left:** Daily spending trend with 3-day moving average and high-spend highlights
+- **Bottom-right:** Category × Day heatmap (or calendar heatmap for 30+ day spans)
+
+All charts include a branded watermark and generation timestamp.
+
 ---
 
 ## ⚙️ Tech Stack
 
-- **Python 3.9+**
-- **pandas** — data loading, cleaning, grouping
-- **matplotlib** — bar chart & pie chart generation
+- **Python 3.10+**
+- **pandas** — data loading, cleaning, grouping, pivot tables
+- **matplotlib** — bar, pie, and line chart generation
+- **seaborn** — heatmap visualization
+- **numpy** — numerical operations, percentile calculations
 - **rich** — beautiful terminal UI, tables, progress bars, spinners
 - **pathlib** — cross-platform file handling
 
@@ -176,27 +196,13 @@ The script gracefully handles:
 - Missing required columns (`Date`, `Description`, `Amount`)
 - Non-numeric amounts (rows are dropped with a warning)
 - Already-categorized rows (left untouched)
-- All errors shown with styled `[red]✗[/red]` / `[yellow]⚠[/yellow]` messages
+- Missing font glyphs in chart rendering (uses safe fallback symbols)
+- All errors shown with styled `✗` / `⚠` messages
 
 ---
 
 ## 📝 License
 
 Free to use and modify. Built as a portfolio demonstration piece.
-
----
-
-## 🛡️ Error Handling
-
-The script gracefully handles:
-- Missing CSV file
-- Empty CSV / no data rows
-- Missing required columns (`Date`, `Description`, `Amount`)
-- Non-numeric amounts (rows are dropped with a warning)
-- Already-categorized rows (left untouched)
-
----
-
-## 📝 License
 
 Free to use and modify. Built as a portfolio demonstration piece.
