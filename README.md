@@ -204,7 +204,7 @@ The script gracefully handles:
 ## 📝 License
 
 Free to use and modify. Built as a portfolio demonstration piece.
----
+
 
 ## 👨‍💻 About the Developer
 
