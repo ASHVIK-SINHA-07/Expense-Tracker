@@ -160,11 +160,11 @@ Date,Description,Amount,Category
 
 | Bar Chart | Pie Chart |
 |---|---|
-| ![Bar Chart](output/category_chart.png) | ![Pie Chart](output/pie_chart.png) |
+| ![Bar Chart](screenshots/category_chart.png) | ![Pie Chart](screenshots/pie_chart.png) |
 
 ### Dashboard (2×2 — all charts in one image)
 
-![Expense Dashboard](output/dashboard.png)
+![Expense Dashboard](screenshots/dashboard.png)
 
 The dashboard includes:
 - **Top-left:** Horizontal bar chart with average-spending line
