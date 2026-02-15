@@ -204,3 +204,18 @@ The script gracefully handles:
 ## 📝 License
 
 Free to use and modify. Built as a portfolio demonstration piece.
+---
+
+## 👨‍💻 About the Developer
+
+Built by **Ashvik Sinha** - BTech CSE student @ Bennett University specializing in Python automation and data visualization.
+
+If you need something similar or want to discuss a project:
+
+📧 **Email:** ashviksinha.dev@gmail.com  
+🔗 **LinkedIn:** [linkedin.com/in/ashvik-sinha]  
+🐙 **GitHub:** [@ASHVIK-SINHA-07](https://github.com/ASHVIK-SINHA-07)
+
+---
+
+*Made for freelancers, small businesses, and anyone who wants to understand their spending better.*
