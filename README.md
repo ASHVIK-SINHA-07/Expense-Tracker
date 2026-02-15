@@ -213,7 +213,7 @@ Built by **Ashvik Sinha** - BTech CSE student @ Bennett University specializing 
 If you need something similar or want to discuss a project:
 
 📧 **Email:** ashviksinha.dev@gmail.com  
-🔗 **LinkedIn:** [www.linkedin.com/in/ashvik-sinha]
+🔗 **LinkedIn:** [www.linkedin.com/in/ashvik-sinha]     
 🐙 **GitHub:** [@ASHVIK-SINHA-07](https://github.com/ASHVIK-SINHA-07)
 
 ---
